@@ -7,7 +7,7 @@ Overdrive/Distortion pedal simulation
 
 ## Features
 
-- Valve amplifier simulation. 
+- Overdrive pedal simulation. 
 
 ## Dependencys
 
