@@ -183,9 +183,11 @@ void LittleFly_::deactivate_f()
 
 void LittleFly_::run_dsp_(uint32_t n_samples)
 {
+  if(n_samples<1) return;
   FAUSTFLOAT buf[n_samples];
   // do inplace processing at default
-  memcpy(output, input, n_samples*sizeof(float));
+  if (output != input)
+    memcpy(output, input, n_samples*sizeof(float));
   // check if bypass is pressed
   if (bypass_ != static_cast<uint32_t>(*(bypass))) {
     bypass_ = static_cast<uint32_t>(*(bypass));
