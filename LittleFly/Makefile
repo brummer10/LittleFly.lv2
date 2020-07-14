@@ -35,14 +35,14 @@
 	# set bundle name
 	NAME = LittleFly
 	BUNDLE = $(NAME).lv2
-	VER = 0.6
+	VER = 1.0
 
 	LIB_DIR := ../libxputty/libxputty/
 	HEADER_DIR := $(LIB_DIR)include/
 	INCLUDE_DIR := $(LIB_DIR)/lv2_plugin/
 
 	# set compile flags
-	CXXFLAGS += -D_FORTIFY_SOURCE=2 -I. -I./dsp -I./plugin -fPIC -DPIC -O2 -Wall -fstack-protector -funroll-loops \
+	CXXFLAGS += -O2 -D_FORTIFY_SOURCE=2 -I. -I./dsp -I./plugin -fPIC -DPIC -O2 -Wall -fstack-protector -funroll-loops \
 	-ffast-math -fomit-frame-pointer -fstrength-reduce -fdata-sections \
 	-Wl,--gc-sections -Wl,-z,relro,-z,now -Wl,--exclude-libs,ALL -Wl,-z,defs $(SSE_CFLAGS)
 	LDFLAGS += -I. -shared -lm -Wl,-z,noexecstack -fvisibility=hidden
